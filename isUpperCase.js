@@ -8,7 +8,9 @@
  * @returns {boolean}
  */
 const isUppercase = (s) => {
-  return s===s.toUpperCase();
+  if (s === s.toUpperCase()) {
+    return true;
+  }
+  return false;
 };
-
 module.exports = isUppercase;
