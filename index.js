@@ -15,20 +15,18 @@ const { prompt, print } = require('./prompt-print');
  */
 print('What do you want to say to Grandma!!');
 let countbye = 0;
-let userinput = prompt();
-while (1) {
+let userinput;
+while (countbye < 2) {
+  userinput = prompt();
   if (isUppercase(userinput)) {
-    if (userinput === 'BYE') {
-      countbye += 1;
-      if (countbye > 2) {
-        break;
-      }
-    }
-    print('NO, NOT SINCE 19'.concat(getRandomValue(30, 50)));
+    const thing = getRandomValue(30, 50);
+    print(`NO, NOT SINCE 19${thing}`);
   } else {
     print('HUH?! SPEAK UP, SONNY!');
+  }
+  if (userinput === 'BYE') {
+    countbye += 1;
+  } else {
     countbye = 0;
   }
-
-  userinput = prompt();
 }
